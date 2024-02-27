@@ -2,9 +2,11 @@
 	import katex from "katex";
 	export let math;
 	export let displayMode = false;
+	export let trust = true;
 	
 	const options = {
 		displayMode: displayMode,
+		trust: trust,
 		throwOnError: false
 	}
 	
