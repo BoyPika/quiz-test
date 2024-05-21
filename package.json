@@ -17,7 +17,6 @@
   "dependencies": {
     "katex": "^0.16.9",
     "mathlive": "^0.98.6",
-    "omorphia": "^0.7.2",
     "svelte-tex": "^1.0.5",
     "vite-plugin-mkcert": "^1.17.1"
   }
