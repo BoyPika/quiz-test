@@ -317,7 +317,7 @@
       }
     }
     async function submitAnswers() {
-      const a = answers[0] // bad fucking code but idk how to make better
+      const a = answers[0] // bad fucking code but IDK how to make better
       const b = answers[1]
       const c = answers[2]
       const d = answers[3]
@@ -337,7 +337,7 @@
       const r = answers[17]
       const s = answers[18]
       const t = answers[19]
-      const u = answers[20]
+      const u = answers[20].toString()
       const v = answers[21]
       const w = answers[22]
       const x = answers[23]
@@ -477,10 +477,8 @@
       </div>
     {:else}
       <h1>Quiz Finished!</h1>
-  
-      <p>Your score is {score}/{questions.length}</p>
-      <p>{answers.join(' + ')}</p>
       <button on:click={() => submitAnswers()}>submit answers</button>
+      <p>Your score is {score}/{questions.length}</p>
     {/if}
     </body>
   </main>
