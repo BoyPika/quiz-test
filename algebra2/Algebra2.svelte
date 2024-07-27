@@ -2,7 +2,7 @@
     import 'mathlive';
     import Katex from "../src/lib/Katex.svelte";
     import { MathfieldElement } from "mathlive";
-  
+    let answers = [];
     let questions = [
       {
         question: "\\textnormal{Which expression is equivalent to } \\sqrt{20x^{16}y^{25}}?",
@@ -220,7 +220,7 @@
         answer: "f(x)\\textnormal{ approaches }\\infin"
       },
       {
-        question: "\\textnormal{Jessica paid \\$23,000 for her car and kept a record of its value. }",
+        question: "\\textnormal{Jessica paid \\$23,000 for her car and kept a record of its value. }", //TODO Fix CSS
         line2: "",
         line3:"\\textnormal{Assuming the relationship is exponential, which equation best models the curve of best fit for the data}?",
         options: ["y=21,000(1.20)^x", "y=22,300(2.60)^x", "y=23,100(0.85)^x", "y=23,500(0.70)^x"],
@@ -257,7 +257,7 @@
       {
         question: "\\textnormal{ A scientist obtained a sample that contained 80 grams of radioactive Barium-122 that decays exponentially over time.}",
         line2: "\\textnormal{The amount of Barium-122 that remained in the sample at observed times is shown in the table.}",
-        line3:"\\textnormal{If the radioactive decay continues at the same rate, }",
+        line3:"\\textnormal{If the radioactive decay continues at the same rate, }",//TODO Fix CSS
         line4:"\\textnormal{which is closest to the amount of the sample of Barium-122 remaining at 5 minutes?}",
         options: ["8.3\\textnormal{ grams}", "10.0\\textnormal{ grams}", "11.7\\textnormal{ grams}", "14.1\\textnormal{ grams}"],
         answer: "14.1\\textnormal{ grams}"
@@ -284,6 +284,7 @@
     function submitAnswer() {
       if (currentQuestion === 16 || currentQuestion === 37) {
         const formulaElement = document.getElementById('formula') as MathfieldElement;
+        answers.push(formulaElement.getValue('ascii-math'));
         if(formulaElement.getValue('latex') === questions[currentQuestion].answer) {
           score++;
         }
@@ -292,6 +293,7 @@
         if(formElement) {
           const checkboxes = formElement.querySelectorAll('input[type="checkbox"]');
           let checkedValues = Array.from(checkboxes).filter((checkbox: HTMLInputElement) => checkbox.checked).map((checkbox: HTMLInputElement) => checkbox.name);
+          answers.push(checkedValues)
           if (checkedValues.includes(questions[currentQuestion].answer) && checkedValues.includes(questions[currentQuestion].answer2) && !checkedValues.includes(questions[currentQuestion].wanswer) && !checkedValues.includes(questions[currentQuestion].wanswer2) && !checkedValues.includes(questions[currentQuestion].wanswer3) && !checkedValues.includes(questions[currentQuestion].wanswer4)){
             score++;
           }
@@ -305,6 +307,7 @@
       if (selectedOption === questions[currentQuestion].answer) {
         score++;
       }
+      answers.push(selectedOption)
       nextQuestion();
     }
   
@@ -312,6 +315,53 @@
       if (currentQuestion < questions.length + 1) {
         currentQuestion++;
       }
+    }
+    async function submitAnswers() {
+      const a = answers[0] // bad fucking code but idk how to make better
+      const b = answers[1]
+      const c = answers[2]
+      const d = answers[3]
+      const e = answers[4]
+      const f = answers[5]
+      const g = answers[6]
+      const h = answers[7]
+      const i = answers[8]
+      const j = answers[9]
+      const k = answers[10]
+      const l = answers[11]
+      const m = answers[12]
+      const n = answers[13]
+      const o = answers[14]
+      const p = answers[15]
+      const q = answers[16]
+      const r = answers[17]
+      const s = answers[18]
+      const t = answers[19]
+      const u = answers[20]
+      const v = answers[21]
+      const w = answers[22]
+      const x = answers[23]
+      const y = answers[24]
+      const z = answers[25]
+      const aa = answers[26]
+      const ab = answers[27]
+      const ac = answers[28]
+      const ad = answers[29]
+      const ae = answers[30]
+      const af = answers[31]
+      const ag = answers[32]
+      const ah = answers[33]
+      const ai = answers[34]
+      const aj = answers[35]
+      const ak = answers[36]
+      const al = answers[37]
+      let result = null
+      const res = await fetch('http://71.127.135.195:8081/decode', {
+        method: 'POST',
+        body: JSON.stringify({a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al}),
+      })
+      const json = await res.json()
+      result = JSON.stringify(json);
     }
   </script>
   
@@ -429,6 +479,8 @@
       <h1>Quiz Finished!</h1>
   
       <p>Your score is {score}/{questions.length}</p>
+      <p>{answers.join(' + ')}</p>
+      <button on:click={() => submitAnswers()}>submit answers</button>
     {/if}
     </body>
   </main>
