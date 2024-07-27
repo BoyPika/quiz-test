@@ -356,7 +356,7 @@
       const ak = answers[36]
       const al = answers[37]
       let result = null
-      const res = await fetch('http://71.127.135.195:8081/decode', {
+      const res = await fetch('http://71.127.135.195:8081/alg2', {
         method: 'POST',
         body: JSON.stringify({a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al}),
       })
