@@ -5,7 +5,7 @@
     let result = null
 
     async function doPost () {
-        const res = await fetch('http://71.127.135.195:8081/decode', {
+        const res = await fetch('https://answerchecker.fly.dev/alg2', {
             method: 'POST',
             body: JSON.stringify({a, b, c}),
         })
