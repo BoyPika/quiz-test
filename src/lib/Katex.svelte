@@ -7,7 +7,7 @@
 	const options = {
 		displayMode: displayMode,
 		trust: trust,
-		throwOnError: false
+		throwOnError: true
 	}
 	
 	$: katexString = katex.renderToString(math, options);
