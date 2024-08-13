@@ -12,10 +12,10 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "autoprefixer": "^10.4.16",
     "svelte": "^4.2.8",
-    "vite": "^5.0.8"
+    "vite": "5.2.6"
   },
   "dependencies": {
-    "katex": "^0.16.9",
+    "katex": "0.16.10",
     "mathlive": "^0.98.6",
     "svelte-tex": "^1.0.5",
     "vite-plugin-mkcert": "^1.17.1"
