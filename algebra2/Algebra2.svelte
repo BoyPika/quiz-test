@@ -301,13 +301,14 @@
       const aj = answers[35]
       const ak = answers[36]
       const al = answers[37]
-      let result = null
       const res = await fetch('https://answerchecker.fly.dev/alg2', {
         method: 'POST',
         body: JSON.stringify({a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al}),
       })
       const json = await res.json()
-      result = JSON.stringify(json);
+      const score = json["score"]
+      const pdfname = json["pdf"]
+      window.location.assign("/algebra2/results/?score=" + score +"&pdfname=" + pdfname)
     }
   </script>
   

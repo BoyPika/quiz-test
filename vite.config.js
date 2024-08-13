@@ -13,9 +13,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
         input: {
-            main: resolve(__dirname, html),
-            algebra2: resolve(__dirname, 'algebra2/index.html'),
-            chemistry: resolve(__dirname, 'chemistry/index.html'),
+
         },
     },
 },
