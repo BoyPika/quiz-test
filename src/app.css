@@ -33,7 +33,6 @@ input[type="checkbox"] {
   display: none;
 }
 
-
 /* Create a custom checkbox button */
 input[type="checkbox"] + label {
   display: inline-block;
@@ -81,6 +80,7 @@ p {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: white;
 }
 
 #app {

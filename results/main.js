@@ -1,4 +1,4 @@
-import "../../src/app.css";
+import "../src/app.css";
 import Results from "./Results.svelte";
 
 const app = new Results({

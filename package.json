@@ -17,6 +17,7 @@
   "dependencies": {
     "katex": "0.16.10",
     "mathlive": "^0.98.6",
+    "svelte-simple-modal": "^1.6.2",
     "svelte-tex": "^1.0.5",
     "vite-plugin-mkcert": "^1.17.1"
   }

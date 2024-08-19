@@ -11,6 +11,9 @@ dependencies:
   mathlive:
     specifier: ^0.98.6
     version: 0.98.6
+  svelte-simple-modal:
+    specifier: ^1.6.2
+    version: 1.6.2(svelte@4.2.9)
   svelte-tex:
     specifier: ^1.0.5
     version: 1.0.5(svelte@4.2.9)
@@ -24,7 +27,7 @@ devDependencies:
     version: 3.0.2(svelte@4.2.9)(vite@5.2.6)
   autoprefixer:
     specifier: ^10.4.16
-    version: 10.4.17(postcss@8.4.33)
+    version: 10.4.17(postcss@8.4.41)
   svelte:
     specifier: ^4.2.8
     version: 4.2.9
@@ -526,7 +529,7 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /autoprefixer@10.4.17(postcss@8.4.33):
+  /autoprefixer@10.4.17(postcss@8.4.41):
     resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -538,7 +541,7 @@ packages:
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.33
+      postcss: 8.4.41
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -611,7 +614,7 @@ packages:
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
     dependencies:
       mdn-data: 2.0.30
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -832,15 +835,6 @@ packages:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
 
-  /postcss@8.4.33:
-    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-    dev: true
-
   /postcss@8.4.41:
     resolution: {integrity: sha512-TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -878,10 +872,6 @@ packages:
       '@rollup/rollup-win32-x64-msvc': 4.20.0
       fsevents: 2.3.3
 
-  /source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
-
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
@@ -903,6 +893,14 @@ packages:
     dependencies:
       svelte: 4.2.9
     dev: true
+
+  /svelte-simple-modal@1.6.2(svelte@4.2.9):
+    resolution: {integrity: sha512-cRjpqjZTH0rU5G+SRhUDHOV6TISQs6AnEW/Z7D5uXiz5V/3axrBYcBCPnKMI2Z0EyXmpwPXK4q9grroQTL6rhQ==}
+    peerDependencies:
+      svelte: ^3.30.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.9
+    dev: false
 
   /svelte-tex@1.0.5(svelte@4.2.9):
     resolution: {integrity: sha512-e1qhm86hpI3GfAqc8p5RUzA6bXLRZRvK74b21Akyo29HWLUxPyO4j0W90ythFxPXRYHR+Oth3ODvCMT/FFrqlw==}

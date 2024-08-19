@@ -185,7 +185,7 @@
     const json = await res.json()
     const score = json["score"]
     const pdfname = json["pdf"]
-    window.location.assign("/chemistry/results/?score=" + score +"&pdfname=" + pdfname)
+    window.location.assign("/results/?score=" + score +"&pdfname=" + pdfname + "&subject=Chemistry" + "&maxscore=" + questions.length)
   }
 </script>
 
