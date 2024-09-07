@@ -134,7 +134,7 @@
         question: "\\textnormal{The function } f(x)=(1-x)^2-4 \\textnormal{ is decreasing throughout the interval—}",
         line2: "",
         line3: "",
-        options: ["-4<x<\\infin", "-\\infin<x<1", "-1<x<3", "-\\infin<x<\\infin"]
+        options: ["-4<x<\\infty", "-\\infty<x<1", "-1<x<3", "-\\infty<x<\\infty"]
       },
       {
         question: "\\textnormal{Given: }f(x)=4x^4-15\\textnormal{and}g(x)=2x+11",
@@ -179,10 +179,10 @@
         options: ["y=4", "y=0", "y=-1", "y=-10"]
       },
       {
-        question: "\\textnormal{As }x\\textnormal{ approaches negative infinity, which of the following describes the end behavior of }",
+        question: "\\textnormal{As }x\\textnormal{ approaches negative inftyity, which of the following describes the end behavior of }",
         line2: "f(x)=-x^7+bx^3+c?",
         line3:"",
-        options: ["f(x)\\textnormal{ approaches }c", "f(x)\\textnormal{ approaches }0", "f(x)\\textnormal{ approaches }\\infin", "f(x)\\textnormal{ approaches }-\\infin"]
+        options: ["f(x)\\textnormal{ approaches }c", "f(x)\\textnormal{ approaches }0", "f(x)\\textnormal{ approaches }\\infty", "f(x)\\textnormal{ approaches }-\\infty"]
       },
       {
         question: "\\textnormal{Jessica paid \\$23,000 for her car and kept a record of its value. }", //TODO Fix CSS
@@ -191,7 +191,7 @@
         options: ["y=21,000(1.20)^x", "y=22,300(2.60)^x", "y=23,100(0.85)^x", "y=23,500(0.70)^x"]
       },
       {
-        question: "\\textnormal{ What is the sum of the infinite geometric series } 9,-6,4,-\\frac{8}{3},...?",
+        question: "\\textnormal{ What is the sum of the inftyite geometric series } 9,-6,4,-\\frac{8}{3},...?",
         line2: "",
         line3:"",
         options: ["\\frac{29}{3}", "\\frac{25}{3}", "\\frac{27}{5}", "\\frac{18}{5}"]
@@ -418,7 +418,7 @@
           <button type="submit" on:click={submitAnswer}>Submit</button>
         {:else}
           {#each questions[currentQuestion].options as option}
-            <button on:click={() => checkAnswer(option)} on:keydown={(event) => {if (event.key === 'Enter') checkAnswer(option)}}><Katex math={option}/></button>
+            <button class="btn1" on:click={() => checkAnswer(option)} on:keydown={(event) => {if (event.key === 'Enter') checkAnswer(option)}}><Katex math={option}/></button>
           {/each}
         {/if}
       </div>
